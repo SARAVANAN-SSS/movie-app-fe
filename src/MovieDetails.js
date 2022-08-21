@@ -1,5 +1,6 @@
 import { useHistory, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { API } from "./global";
 
 export function MovieDetails() {
   const history = useHistory();
@@ -7,7 +8,7 @@ export function MovieDetails() {
   const [movie, setMovie] = useState([]);
   const { name, rating, summary, trailer } = movie;
   const getMovie = () => {
-    fetch(`https://62d5ee0dd4406e523562b8ce.mockapi.io/movies/${id}`, {
+    fetch(`${API}/movies/${id}`, {
       method: "GET",
     })
       .then((data) => data.json())

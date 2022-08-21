@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { API } from "./global";
 
 const schema = yup.object({
   name: yup.string().required().min(2, "Provide Bigger Name"),
@@ -18,7 +19,7 @@ export function EditMovie() {
   const [movie, setMovie] = useState();
 
   const getMovie = () => {
-    fetch(`https://62d5ee0dd4406e523562b8ce.mockapi.io/movies/${id}`, {
+    fetch(`${API}/movies/${id}`, {
       method: "GET",
     })
       .then((data) => data.json())
@@ -33,7 +34,7 @@ function UpdateMovie({ movie }) {
   const history = useHistory();
 
   const editMovie = (updatedMovie) => {
-    fetch(`https://62d5ee0dd4406e523562b8ce.mockapi.io/movies/${movie.id}`, {
+    fetch(`${API}/movies/${movie.id}`, {
       method: "PUT",
       body: JSON.stringify(updatedMovie),
       headers: {

@@ -3,6 +3,7 @@ import TextField from "@mui/material/TextField";
 import { useHistory } from "react-router-dom";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { API } from "./global";
 
 const schema = yup.object({
   name: yup.string().required().min(2, "Provide Bigger Name"),
@@ -27,7 +28,7 @@ export function AddMovie() {
     });
 
   const addMovie = (newMovie) => {
-    fetch("https://62d5ee0dd4406e523562b8ce.mockapi.io/movies", {
+    fetch(`${API}/movies`, {
       method: "POST",
       body: JSON.stringify(newMovie),
       headers: {
