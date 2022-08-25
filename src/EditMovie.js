@@ -27,14 +27,14 @@ export function EditMovie() {
   };
   useEffect(getMovie, []);
 
-  return movie ? <UpdateMovie movie={movie} /> : "";
+  return movie ? <UpdateMovie movie={movie} id={id} /> : "";
 }
 
-function UpdateMovie({ movie }) {
+function UpdateMovie({ movie,id }) {
   const history = useHistory();
 
   const editMovie = (updatedMovie) => {
-    fetch(`${API}/movies/${movie.id}`, {
+    fetch(`${API}/movies/${id}`, {
       method: "PUT",
       body: JSON.stringify(updatedMovie),
       headers: {

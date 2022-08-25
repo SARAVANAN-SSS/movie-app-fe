@@ -31,13 +31,13 @@ export function MovieList() {
 
   return (
     <div className="movie-list">
-      {movieList.map(({ name, poster, rating, summary, id }, index) => (
+      {movieList.map(({ name, poster, rating, summary, id,_id }, index) => (
         <Movie
-          key={id}
+          key={_id}
           deleteButton={
             <Button
               onClick={() => {
-                deleteMovie(id);
+                deleteMovie(_id);
               }}
             >
               <IconButton aria-label="delete" color="error">
@@ -48,7 +48,7 @@ export function MovieList() {
           editButton={
             <Button
               onClick={() => {
-                history.push(`/movie/edit/${id}`);
+                history.push(`/movie/edit/${_id}`);
               }}
             >
               <IconButton aria-label="edit" color="secondary">
@@ -56,7 +56,7 @@ export function MovieList() {
               </IconButton>
             </Button>
           }
-          id={id}
+          id={_id}
           name={name}
           poster={poster}
           rating={rating}
