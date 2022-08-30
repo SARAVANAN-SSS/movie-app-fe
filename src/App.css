@@ -13,9 +13,10 @@
 }
 
 .movie-poster {
-  height: 540px;
+  height: 320px;
+  /* height: 540px; */
   width: 320px;
-  object-fit: cover;
+  object-fit:cover;
 }
 
 .movie-container {
@@ -53,6 +54,7 @@
 }
 
 .add-movie-btn {
+  width: 530px;
   display: flex;
   flex-direction: column;
   gap: 10px;
