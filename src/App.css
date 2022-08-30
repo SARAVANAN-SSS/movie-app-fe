@@ -1,5 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 .App {
-  font-family: "Roboto";
+  font-family: "Outfit", sans-serif;;
+}
+
+.App .mrw{
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: gold;
+  letter-spacing: 0.1rem;
+
 }
 
 .movie-poster {
@@ -72,6 +82,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .navigation {
@@ -82,3 +93,25 @@ body {
 .not-found {
   text-align: center;
 }
+
+.home h1{
+  margin: 1rem 1rem 1.5rem 1rem;
+  font-size: 2.7rem ;
+  color: gold;
+  font-weight: 500;
+  letter-spacing: 0.03rem;
+
+}
+
+.home p{
+  margin: 1rem 10rem 1.5rem 10rem;
+  font-size: 1.2rem ;
+  text-align: center;
+  letter-spacing: 0.05rem;
+
+}
+
+
+
+
+

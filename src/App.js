@@ -35,17 +35,17 @@ const theme = createTheme({
   return (
 
     <ThemeProvider theme={theme}>
-      <Paper sx = {{minHeight : "100vh"}} elevation={7}>
+      <Paper sx = {{minHeight : "100vh"}} elevation={0}>
       <div className="App">
     
       <AppBar position="static">
         <Toolbar>
-        <Button onClick={()=>{history.push("/")}} color="inherit">Home</Button>
-        <Button onClick={()=>{history.push("/movies")}} color="inherit">Movies</Button>
+        <Button className="mrw" onClick={()=>{history.push("/")}} color="inherit">MRW</Button>
+        <Button onClick={()=>{history.push("/movies")}} color="inherit" sx={{ ml: 5,marginLeft:"auto" }}>Movies</Button>
         <Button onClick={()=>{history.push("/movies")}} color="inherit">Films</Button>
         <Button onClick={()=>{history.push("/movie/add")}} color="inherit">Add Movie</Button>
         <Button onClick={()=>{history.push("/dark-light")}} color="inherit">DLT Experiment</Button>
-        <IconButton sx={{ ml: 5,marginLeft:"auto" }} onClick={()=>{setMode(mode==='dark' ? 'light' : 'dark')}} color="inherit">
+        <IconButton onClick={()=>{setMode(mode==='dark' ? 'light' : 'dark')}} color="inherit">
         {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
       </IconButton>
       </Toolbar>
